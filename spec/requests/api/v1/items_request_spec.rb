@@ -28,8 +28,8 @@ describe "Items API" do
     expect(item["description"]).to eq(item_1.description)
     expect(item["image_url"]).to eq(item_1.image_url)
 
-    # expect(item.created_at).to eq(item_1.description)
-    # expect(item.updated_at).to eq(nil)
+    expect(item["created_at"]).to eq(nil)
+    expect(item["updated_at"]).to eq(nil)
   end
 
   it "DELETE: destroys an item's record" do
@@ -55,8 +55,8 @@ describe "Items API" do
     expect(item["description"]).to eq(item_params[:description])
     expect(item["image_url"]).to eq(item_params[:image_url])
 
-    # expect(item.created_at).to eq()
-    # expect(item.updated_at).to eq()
+    expect(item["created_at"]).to eq(nil)
+    expect(item["updated_at"]).to eq(nil)
   end
 
 

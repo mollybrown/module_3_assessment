@@ -5,7 +5,8 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def show
-    render json: Item.find(params[:id])
+    item = Item.find(params[:id])
+    render :json => item, :except => [:created_at, :updated_at]
   end
 
   def destroy
@@ -15,7 +16,8 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def create
-    render json: Item.create(item_params)
+    item = Item.create(item_params)
+    render :json => item, :except => [:created_at, :updated_at], :status => 201
   end
 
   private
