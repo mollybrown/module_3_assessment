@@ -44,5 +44,21 @@ describe "Items API" do
     expect{Item.find(2)}.to raise_exception(ActiveRecord::RecordNotFound)
   end
 
+  it "CREATE: can create a new item" do
+    item_params = {name: "Yo-Yo", description: "can you walk the dog?"}
+
+    post "/api/v1/items", params: {item: item_params}
+    item = Item.last
+
+    expect(response.status).to eq(201)
+    expect(item.id).to eq(item_params[:id])
+    expect(item.name).to eq(item_params[:name])
+    expect(item.description).to eq(item_params[:description])
+    expect(item.image_url).to eq(item_params[:image_url])
+
+    # expect(item.created_at).to eq()
+    # expect(item.updated_at).to eq()
+  end
+
 
 end
