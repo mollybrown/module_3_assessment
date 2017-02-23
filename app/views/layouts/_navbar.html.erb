@@ -8,6 +8,14 @@
     </button>
     <a class="navbar-brand" href="/">Storedom</a>
   </div>
+  <div class="input-group">
+  <%= form_tag(posts_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Search Posts", class: 'form-control' %>
+    <span class="input-group-btn">
+      <%= submit_tag "Search", class: 'btn btn-default' %>
+    </span>
+  <% end %>
+</div>
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li>
