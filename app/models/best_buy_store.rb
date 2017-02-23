@@ -1,5 +1,5 @@
 class BestBuyStore
-  attr_reader: :long_name, :city, :distance, :phone_number, :store_type
+  attr_reader :long_name, :city, :distance, :phone_number, :store_type
 
   def initialize(attributes = {})
     @long_name = attributes
