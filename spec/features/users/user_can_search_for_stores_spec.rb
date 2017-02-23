@@ -4,7 +4,7 @@ describe "Store Search API" do
   it "a user can search for stores by zip" do
     visit "/"
 
-    fill_in :search, with: "80302"
+    fill_in :search, with: "80202"
     click_on "Search"
 
     expect(current_path).to eq("/search")

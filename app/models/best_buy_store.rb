@@ -6,12 +6,12 @@ class BestBuyStore
     @city = attributes
     @distance = attributes
     @phone_number = attributes
-    @store_type
+    @store_type = attributes
   end
 
   def self.stores_by_zip(zip)
-    BestBuyService.stores_by_zip(zip).map do |raw_stores|
-      new(raw_stores)
+    BestBuyService.stores_by_zip(zip).map do |raw_store|
+      new(raw_store)
     end
   end
 
