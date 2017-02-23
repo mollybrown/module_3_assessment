@@ -9,8 +9,8 @@ class BestBuyStore
     @store_type = attributes
   end
 
-  def self.stores_by_zip(zip)
-    BestBuyService.stores_by_zip(zip).map do |raw_store|
+  def self.stores_by_zip(zip,miles)
+    BestBuyService.stores_by_zip(zip,miles).map do |raw_store|
       new(raw_store)
     end
   end
