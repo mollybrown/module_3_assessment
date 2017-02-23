@@ -10,8 +10,13 @@ describe "Store Search API" do
     expect(current_path).to eq("/search")
 
     expect(page).to have_content("16 Total Stores")
-    # And I should see exactly 10 results
-    # And I should see the long name, city, distance, phone number and store type for each of the 10 results
-  end
 
+    within first('.store') do
+      expect(page).to have_content("BEST BUY MOBILE - CHERRY CREEK SHOPPING CENTER")
+      expect(page).to have_content("DENVER")
+      expect(page).to have_content("3.45")
+      expect(page).to have_content("303-270-9189")
+      expect(page).to have_content("Mobile SAS")
+    end
+  end
 end
