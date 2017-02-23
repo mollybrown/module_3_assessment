@@ -11,7 +11,7 @@ class Api::V1::ItemsController < ApplicationController
   def destroy
     item = Item.find(params[:id])
     item.destroy
-    render json: item
+    render :json => item, :status => 204
   end
 
   def create

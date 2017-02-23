@@ -40,7 +40,7 @@ describe "Items API" do
 
     expect(response.status).to eq(204)
     expect(Item.all.count).to eq(1)
-    expect{Item.find(2)}.to raise_exception(ActiveRecord::RecordNotFound)
+    expect{Item.find(1)}.to raise_exception(ActiveRecord::RecordNotFound)
   end
 
   it "CREATE: can create a new item" do
