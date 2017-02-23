@@ -13,4 +13,5 @@ describe "Store Search API" do
     # And I should see exactly 10 results
     # And I should see the long name, city, distance, phone number and store type for each of the 10 results
   end
+
 end

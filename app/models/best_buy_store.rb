@@ -2,11 +2,11 @@ class BestBuyStore
   attr_reader :long_name, :city, :distance, :phone_number, :store_type
 
   def initialize(attributes = {})
-    @long_name = attributes
-    @city = attributes
-    @distance = attributes
-    @phone_number = attributes
-    @store_type = attributes
+    @long_name = attributes[:longName]
+    @city = attributes[:city]
+    @distance = attributes[:distance]
+    @phone_number = attributes[:phone]
+    @store_type = attributes[:storeType]
   end
 
   def self.stores_by_zip(zip,miles)
