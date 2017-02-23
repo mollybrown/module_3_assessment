@@ -24,12 +24,15 @@ describe "Items API" do
 
     expect(response.status).to eq(200)
 
+    byebug
     expect(item.count).to eq(1)
     expect(item.id).to eq(item_1.id)
     expect(item.name).to eq(item_1.name)
     expect(item.description).to eq(item_1.description)
+    expect(item.image_url).to eq(nil)
 
-
+    # expect(item.created_at).to eq(item_1.description)
+    # expect(item.updated_at).to eq(nil)
   end
 
 
